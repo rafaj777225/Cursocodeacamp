@@ -3,13 +3,13 @@
 
 
 def hashElect(myhash)
-arr=[]
+  arr=[]
 
 
-myhash.each_value {|value| arr<<value }
+  myhash.each_value {|value| arr<<value }
 
   arr
-       
+  
 end
 
 
