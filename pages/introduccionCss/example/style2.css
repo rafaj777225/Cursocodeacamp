@@ -1,0 +1,22 @@
+p {
+  color: red;
+  text-align: center;
+}
+h1 {
+  color:blue;
+}
+#titulo_1{
+  color: blue;
+  font-weight: bold;
+}
+#primer_parrafo{
+text-align: justify;
+}
+
+.list_elements{
+  text-align: left;
+    list-style-type: none;
+}
+.main_text{
+  font-size: 20px;
+}
