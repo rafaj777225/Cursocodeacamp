@@ -1,7 +1,78 @@
-#title{
-
+#title {
+	color: #FFFFFF;
+	background-color: #221F1F;
+	text-align: center;
 
 }
 .back{
-  background-color: 
+/*	background-color: black;*/
+	background-image : url("g.jpg");
+	background-size: 50%;
+/*	text-align: center;*/
+	padding: 50px;
+	font-size: 120%;
+
 }
+
+/*.img {
+
+ 	border-radius: 8px;
+	width: 600px;
+    height: 300px;
+   
+}
+*/
+.cuerpo{
+	opacity: 0.99;
+    background-color: #221F1F;
+	color: white;
+	font-style: normal;
+	font-size: 20px;
+	text-align: justify;
+
+}
+.caption {
+padding: 0;
+width: 100%;
+position: relative;
+}
+.caption img {
+width: 100%;
+height: auto;
+display: block;
+padding: 0;
+border: 0;
+}
+.caption::before {
+content: attr(title);
+position: absolute;
+opacity: 0.9;
+background: #221F1F; /* Color de fondo */
+background: rgba(255, 250, 0); /* Color de fondo en RGBA */
+color: white; /* Color del texto */
+font-size: 18px; /* Tamaño del texto */
+padding: 5px;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: left;
+z-index: 1;
+}
+
+.frase{
+	opacity: 0.9;
+    background-color:#221F1F;
+	color: white;
+	font-style: italic;
+	font-size: 35px;
+	text-align: center;
+}
+.biblio{
+	opacity: 0.9;
+    background-color:#221F1F;
+	color: white;
+	font-style: "Comic Sans MS";
+	font-size: 40px;
+	text-align: center;
+}
+
