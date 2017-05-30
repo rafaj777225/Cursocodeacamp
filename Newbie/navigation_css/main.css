@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+    background-color:  #A6A6A6;
+ 
+}
+
+nav li{
+    float: left;
+}
+
+nav li,a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 35.6px;
+    text-decoration: none;
+}
+
+
+ul a:hover {
+    background-color: black;
+}
