@@ -1,0 +1,10 @@
+#ejemplo1 ul li a{
+  color:blue;
+}
+
+#ejemplo2 li.menu a{
+  color: green;
+}
+#ejemplo3 li em a.menu{
+ color: green; 
+}
