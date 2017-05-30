@@ -1,0 +1,61 @@
+<!--Ejercicio
+Crea un formulario para una cadena de autoservicios que te permita capturar la información de facturación de un cliente, usa los siguientes campos y asegurate de estar usando el tipo de datos correcto para cada uno:
+
+Nombre Completo
+RFC
+Dirección
+Email
+Teléfono
+Descripción de la compra
+Tipo de Pago, con opciones como Efectivo, Cheque, etc.
+Monto -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario</title>
+</head>
+<body>
+  <form id="form">
+    <fieldset>
+      <legend>Cadena de Autoservicio</legend>
+      <label for="first_name">
+        First Name:
+        <input type="text" name="first_name">
+      </label></br></br>
+      <label for="rfc">
+        RFC:
+        <input type="text" name="rfc">
+      </label></br></br>
+      <label for="direccion">
+        Direccion:
+        <input type="text" name="direccion">
+      </label></br></br>
+      <label for="email">
+        Email:
+        <input type="email" name="email">
+      </label></br></br>
+      <label for="phone">
+        Telefono:
+          <input type="text" name="phone">
+      </label></br></br>
+        Descripcion de la Compra:</br></br>
+        <textarea form="form_test" rows="4" cols="50"></textarea>
+      </label></br></br>
+      <label for="description_buy">
+        Tipo de Pago:
+        <select name="type_pay">
+          <option value="#">Pago</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="cheque">Cheque</option>
+          <option value="tarjeta">Tarjeta</option>
+        </select>
+      </label></br></br>
+      <label for="monto">
+        Monto:
+        <input type="text" name="monto">
+      </label></br></br>
+    </form>
+  </fieldset>    
+</body>
+</html>

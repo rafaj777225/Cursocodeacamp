@@ -1,0 +1,25 @@
+#divisor {
+    border: 4px  gold solid;
+    margin: 10px;
+    padding: 5px;
+  }
+
+#subtitle{
+  list-style-type: none;
+    color: red;
+    text-align: left;
+   font-size: 45px
+}  
+#text{
+  
+  list-style-type: none;
+  color: #55ACEE;
+  text-align: left;
+  font-size: 50px;
+  font-style: oblique;
+}
+#textlt{
+  text-decoration: line-through;
+
+}
+
