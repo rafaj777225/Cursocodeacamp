@@ -14,22 +14,21 @@ Tu método debe regresar el nombre correcto de la figura de acuerdo a las reglas
 
 =end
 def prism_type(l1,l2,l3)
-#varible de metodo
+  # varible de metodo
   tipo="x"
-#condiciones
-    if l1!=l2  && l2!=l3 && l1!=l3
-      tipo="cuboide"
-    elsif l1==l2  &&  l1!=l3  
-      tipo="prisma rectangular"
-    elsif l1==l2  &&  l1==l3
-      tipo="cubo"
-    end
-#    retorno implicito
+  # condiciones
+  if l1!=l2  && l2!=l3 && l1!=l3
+    tipo="cuboide"
+  elsif l1==l2  &&  l1!=l3  
+    tipo="prisma rectangular"
+  elsif l1==l2  &&  l1==l3
+    tipo="cubo"
+  end
+  # retorno implicito
   tipo
-
 end
 
-#test
+# test
 p prism_type(5, 5, 5) == "cubo"
 p prism_type(5, 5, 4) == "prisma rectangular"
 p prism_type(5, 4, 3) == "cuboide"
