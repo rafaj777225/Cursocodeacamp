@@ -1,0 +1,37 @@
+================== abre el prompt de sqlite y crea la base de datos
+
+>> $ sqlite3 ejemplo.db
+
+================== abre la base de datos
+
+sqlite> .open ejemplo.db
+
+================== crea la tabla con sus respectivos campos y propiedades de los campos
+
+sqlite> CREATE TABLE usuarios (
+   ...>   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...>   nombre VARCHAR(64) NOT NULL,
+   ...>   apellido  VARCHAR(64) NOT NULL,
+   ...>   email VARCHAR(128) UNIQUE NOT NULL,
+   ...>   fecha_nacimiento DATETIME NOT NULL,
+   ...>   genero VARCHAR(10) NOT NULL
+   ...> );
+================== sentencia que inserta registros en los campos    
+
+sqlite> INSERT INTO tabla
+   ...>  (registro1,registro2,registro3,........,registroN)
+   ...>  VALUES
+   ...>  ('valor1', 'valor2', 'valor3',.........., 'valorN');
+
+================== sentencia de consulta
+
+sqlite> SELECT * FROM tabla;
+
+================== sentencia que añade un campo a la tabla 
+
+sqlite> ALTER TABLE usuarios ADD apodo VARCHAR(64);
+
+================== sentencia que actualiza registros o tablas 
+
+sqlite> UPDATE usuarios set campo='nuevo valor' where campo campo=clave;
+sqlite> UPDATE usuarios set campo1='nuevo valor1',campo2='nuevo valor2' where campoclave=valorclave;
