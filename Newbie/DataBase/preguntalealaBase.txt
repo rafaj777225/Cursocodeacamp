@@ -1,0 +1,66 @@
+1
+sqlite> select count(OrderId) from orders where CustomerID=3;
+count(OrderId)
+2
+sqlite> select count(OrderId) from Orders where CustomerId=(select CustomerId from Customers where ContactName='Jim Wood');
+count(OrderId)
+ 
+3
+sqlite> select count(OrderId) from Orders where CustomerId=(Select CustomerId from Customers where CompanyName='Slots Carpet');
+count(OrderId)
+             
+4
+sqlite> SELECT companyname, COUNT(orderid) AS pedidos FROM orders
+   ...>  INNER JOIN customers
+   ...> ON orders.customerid = customers.customerid
+   ...> GROUP BY companyname
+   ...>  ORDER BY pedidos DESC;
+
+5
+sqlite> SELECT companyname, COUNT(orderid) AS pedidos FROM orders
+   ...>  INNER JOIN customers
+   ...> ON orders.customerid = customers.customerid
+   ...> GROUP BY companyname
+   ...>  ORDER BY pedidos ASC;
+6
+sqlite> SELECT companyname, COUNT(orderid) AS pedidos FROM orders
+   ...>  INNER JOIN customers
+   ...> ON orders.customerid = customers.customerid
+   ...> GROUP BY companyname
+   ...> ORDER BY pedidos DESC
+   ...> LIMIT 1;
+7
+
+sqlite>SELECT companyname, SUM(quantity) AS piezas 
+   ...> FROM orders
+   ...> INNER JOIN customers
+   ...> ON orders.customerid = customers.customerid
+   ...> INNER JOIN orderdetails
+   ...> ON orders.orderid = orderdetails.orderid
+   ...> GROUP BY companyname
+   ...> ORDER BY piezas DESC;
+
+8
+
+sqlite>SELECT orderid, unitprice * quantity AS costo_total
+   ...> FROM orderdetails
+   ...> WHERE orderid = 4;
+
+9
+
+sqlite>SELECT orderid, SUM(unitprice * quantity) AS total
+   ...> FROM orderdetails
+   ...> GROUP BY orderid;
+
+10
+
+sqlite>SELECT orderid, SUM(unitprice * quantity) AS total
+   ...> FROM orderdetails
+   ...> GROUP BY orderid
+   ...> HAVING SUM(unitprice * quantity) > 1000;
+
+11
+
+SELECT orderid, SUM(quantity)
+   ...> FROM orderdetails
+   ...> GROUP BY orderid;
