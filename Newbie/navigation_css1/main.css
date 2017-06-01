@@ -1,26 +1,68 @@
 .container {
   margin: 0 auto;
   width: 768px;
+
 }
 
 header {
   background-color: black;
-}
+   }
 
 #logo {
   display: block;
   margin: 0 auto;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 1%;
-    background-color: #f1f1f1;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+
+nav {
+  float:left;
+  width:120px;
+  height: 503px;
+  background:   #A6A6A6;
+
 }
 .content{
-  text-align: right;;
+    margin-left: 18%;
+
+}
+
+li,a{
+  text-align: center;
+  list-style-type: none;
+  color: white; 
+  padding: 5px 0px;  
+  margin-left: 0%;
+  /*border: solid red;*/
+}
+nav ul{
+  font-weight: bold;
+  text-align: center;
+
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+li {
+  margin-left: 0px;
+  text-align: left;
+}
+
+nav li a{
+  text-decoration: none;  
+  display: block;
+}
+
+.footer{
+  border-top:2px solid black
+}
+.container .footer{
+  clear: both;
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-top: 2px solid black;
+  padding: 20px 0 0 18px;
+}
+
+strong {
+  padding: 120px;
 }

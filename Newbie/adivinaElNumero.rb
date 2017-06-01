@@ -58,3 +58,4 @@ end
 
 # instacia un objeto llamando asi al metodo menu
 game = NumberGuessingGame.new
+game.menu
