@@ -41,7 +41,7 @@ class Reptile < Animal
   end
 end
 
-class Bird < Animal
+class Bird < Mammal
   def fly 
    "Puedo volar"  
   end
@@ -69,7 +69,7 @@ class Macaw < Bird
     end
 end
 
-class Fish < Animal
+class Fish < Mammal
   NADAR = "Se nadar "
   def swim
      NADAR
@@ -77,7 +77,7 @@ class Fish < Animal
 
 end
 
-class Dolphin < Animal
+class Dolphin < Mammal
   INTEL = "inteligente"
 def inteligente
    INTEL 
@@ -92,7 +92,7 @@ class Cat < Mammal
   end
 end
 
-class Whale < Animal
+class Whale < Mammal
   EAT = "Fish"
   def eatFish
     EAT
