@@ -21,8 +21,10 @@ def max_letter_frequency_per_word(sentence)
     # sentence.split..map{ |w| w.count("e") }.max
     # recorre string y lo hace como array de strings y devuelve todos aquellos que su longitud sea mayor a 3 y lo asigna a una variable
     array = words_longer_than(sentence.split,3)
-    # 
+    # llama metodo letter y envia como argumentos el arrya anterior y la ltra e
+    # el metodo letter_per_word regresa un array de numeros 
     num_array = letter_per_word(array,"e")
+    # recibe el array de numeros  y retorna el numero mas largo
     numbers_larger_than(num_array)
 end
 
@@ -42,6 +44,6 @@ end
 # Antes y después de modificar los métodos anteriores estas lineas deben de imprimir "true"
 puts dummy_encrypt("EsteEsMiPassword") == "DROWSSApImS*ETS*"
 
- puts max_letter_frequency_per_word("entero entrar envase enviar enzima equino equipo erario erguir eriaza eriazo erigir eringe eficientemente electroencefalografía") == 5
-# Soluciones
+puts max_letter_frequency_per_word("entero entrar envase enviar enzima equino equipo erario erguir eriaza eriazo erigir eringe eficientemente electroencefalografía") == 5
+
 
