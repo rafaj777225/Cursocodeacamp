@@ -11,20 +11,15 @@ Al final muestra la información de estas constantes a través de comportamiento
 Hay que crear las pruebas correspondientes. Recuerda que las pruebas deben regresar true.
 
 =end
-
-
-
-
-
 #superclase
 class Animal
   
-  def comer
+  def eat
      "comen"
   end
 
-  def defecar
-     "defecan"
+  def sleep
+     "duermen"
   end      
 end
 #clases padre
@@ -117,25 +112,9 @@ cat=Cat.new
 whale=Whale.new  
 snake=Snake.new 
 
-#superclase
-p fish.comer == "comen"
-#llama a su propio metodo
-p fish.swim ==  "Se nadar "
 
-#hereda de dos clases
-#superclase
-p dog.comer == "comen"
-#clase de la que hereda directamente
-p dog.warm_blooded? == "I´m warm_blooded"
-#llama a su propio metodo
-p dog.ladra  == "guaf.....guaf !!"
-
-#hereda de tres clases
-#superclase
-p snake.comer == "comen"
-#clase de la que hereda directamente
+p snake.eat == "comen"
 p snake.has_scales? == "Trepador"
-#llama a su propio metodo
-p snake.poison == "poison"
-
-
+p fish.sleep == "duermen"
+p dog.warm_blooded? ==  "I´m warm_blooded"
+p dog.ladra ==  "guaf.....guaf !!"

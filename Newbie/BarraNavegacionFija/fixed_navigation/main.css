@@ -1,0 +1,50 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+  margin-top: 0px;
+}
+
+
+#logo {
+  display: block;
+  margin: 0 auto; 
+  float: left;
+}
+
+/*.top-nav{
+  overflow:hidden;
+  background-color: black; 
+
+}*/
+.container nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+    /*posiciona el ul manualmente con pixeles a la derecha*/
+    padding-left: 160px
+}
+
+nav li{
+    float: left;
+}
+
+header nav li,a {
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 10px 0px 0px 30px;
+    text-decoration: none;
+}
+
+header nav a{
+  /*display: inline-block;*/
+  /*line-height: normal;*/
+}
+.nose a:hover{
+  background:#f56f3a;
+  /*border-radius: 20px;*/
+  border : solid blue;
+
+}
+ 
