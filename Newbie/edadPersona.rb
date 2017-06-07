@@ -18,7 +18,7 @@ class Person
     @person = person
     @birthdate = birthdate
   end
-protected
+
   def age
     # llama a metodo privado years_old y lo interpola 
     # "#{@person} is #{years_old} years old."
@@ -39,7 +39,7 @@ p carlos.age# == "Carlos is 30 years old."
 #=>true
 p martha.age# == "Martha is 26 years old."
 #=>true
-
+# no puedo llamar  a un metodo privado o protegido directamente solo se pueden llamar desde un metodo de instancia
 p carlos.years_old
 
   

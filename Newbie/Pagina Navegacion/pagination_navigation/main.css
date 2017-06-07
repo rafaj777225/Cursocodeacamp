@@ -1,0 +1,74 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+small.page_no {
+  float: right;
+  color: #ddd;
+}
+.pagination ul{
+  
+  /*border: solid red;*/
+  /*margen izquierdo*/
+  margin-right: 250px;
+  list-style: none;
+}
+
+.pagination li{
+  /*tipo de presentacion del bloque*/
+   display: inline-block;
+   text-decoration: none;
+   color: black;
+   padding: 12px 14px;  
+   /*margen de lado derecho*/
+   margin-left: -5.5px;
+   /*propieda del borde y color*/
+   border: 1px solid #ddd;
+   /*border-radius: 15px;*/
+
+}
+
+.pagination a{
+  /*elimina el tipo lista*/
+    list-style: none;
+    /* quita toda decoracion del texto incluye margenes y estilos de letra o color*/
+    text-decoration: none;
+    color: black;
+    float: left; 
+}
+.active{
+  /* color de fondo*/
+  background-color: #BDBDBD;
+  border: 1px solid #848484;
+}
+
+.disabled{
+  /*opacidad de texto*/
+  opacity: 0.45;
+  /*propiedad del cursor*/
+  cursor: not-allowed;
+
+}
+.footer{
+  /*margen de la parte de arriba del footer*/
+  margin-top: 50px
+}   
+li.first{
+  border-radius: 7px 0px 0px 7px;
+    /*border: 1px solid red;*/
+}
+li.last{
+  /*recibe 4 valores los 2 de extremo son los de lado derecho y los 2 de en medio son los de lado izquierdo*/
+  border-radius: 0px 7px 7px 0px;
+    /*border: 1px solid red;*/
+}
