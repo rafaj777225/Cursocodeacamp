@@ -9,19 +9,19 @@ También crea un método que imprima el valor de esta variable de clase.
 class Vehicle
 # variable de clase inicializada en 1, esta variable como es de clase esta en un metodo de clase 
 # va a cambiar su valor en las clases hijas
-@@var_class = 1
+@@var_class = 0
+  def initialize
+  @@var_class=@@var_class+1
+  end
   def self.number_of_vehicles
   	"This Superclass has created #{@@var_class} vehicles"
   end	
 end
 #clase hija
 class Car < Vehicle
-# variable que es heredad de la clase padre incrementada en 1
-@@var_class=@@var_class+1
 end
 
 class Bus < Vehicle
-@@var_class=@@var_class+1
 end
 
 #test
