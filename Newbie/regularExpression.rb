@@ -11,23 +11,47 @@ original donde usa guiones para dividir los diez dígitos. Si encuentra un numer
 =end
 
 
-
-def number_Account(string)
+# metodo
+def metodo1(string)
+  # match revisa el patron en el string si existe regresara true de lo contrario false 
   string.match(/\d{4}\-\d{3}-\d{3}/) ? true : false
 end
 
-def number_account(string)
-  account = []
-    if string.match(/\d{1}\-\d{2}-\d{2}/) 
-     (string.match(/\d{1}\-\d{2}-\d{2}/)).map { |e| account << e }
-    end
-    # account[0] == nil ? account[0] : false
-    account
+def metodo2(string)
+  # m1 guarda aquella cadena con el patron posicicionandola en posicion 0
+  m1=/(\d{4})-(\d{3})-(\d{3})/.match(string)
+  # regresa la cadena donde se guardo la operacion match
+  !m1.nil? ? m1[0] : nil
+end
+def metodo3(string)
+  array = []
+    account =/(\d{4})-(\d{3})-(\d{3})/.match(string)
+    # la cadena se guarda en un array
+    array << account[0]
+end
+def metodo4(string)
+  account =/(\d{4})-(\d{3})-(\d{3})/.match(string)
+  # la cadena account posicion cero revisa si existe algun numero dentro del patron y lo sustituye con x
+  account[0].gsub!(/[12345]/,'X')
+end
+def metodo5(string)
+  # sustituye puntos por guiones
+  string.gsub!(/[.]/,"-")
+end
+def metodo6(string)
+  # revisa si esta incluido dentro de la cadena un guion si es asi devuelve invalid
+  string.include?("-") ? "valid" : "Invalid"
 end
 
-string_con_un_numero_de_cuenta = "El Cliente con el número de cuenta 1234-123-123 se encuentra en proceso de revisión de sus documentos"
-string_con_un_numero_de_cuenta_no_valido = "El Cliente con el número de cuenta 4-12-12 se encuentra en proceso de revisión de sus documentos"
-string_con_mas_de_un_numero_de_cuenta = "Hay que transferir los fondos de la cuenta 1234-123-123 a la cuenta 4321-321-311"
+p metodo1("1234-123-123") == true
 
-p number_Account(string_con_un_numero_de_cuenta) == true
-p number_account(string_con_un_numero_de_cuenta_no_valido)#
+p metodo2("El Cliente con el número de cuenta 1234-123-123 se encuentra en proceso de revisión de sus documentos") == "1234-123-123"
+
+p metodo3("cuenta1:  cuenta2: 1234-345-789") == ["1234-345-789"]
+
+p metodo4("cuenta1:  cuenta2: 1234-345-789") == "XXXX-XXX-789"
+
+p metodo5("1234.567.890") == "1234-567-890"
+
+p metodo6("123456789") == "Invalid"
+
