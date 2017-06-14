@@ -1,0 +1,103 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+  height: 840px;
+  /*border: 2px solid red;*/
+  background-color: #f0efef;
+}
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+}
+
+a {
+  background-color: #999;
+  color: white;
+  display: block;
+  width: 182px;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+}
+
+.main-title {
+  text-align: center;
+
+}
+
+.footer {
+  /*position:absolute;*/
+  top: 600px;
+  padding: 20px;
+  font-size: 20px;
+  margin-bottom: 80px;
+
+}
+#registration{
+ /* border : 2px solid blue;*/
+  display: block;
+  background-color: #cccccc;
+  /*border: 2px solid black;*/
+
+  margin-top: 110px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+  border-radius: 8px;
+  /*background-color: #d5e1df;*/
+}
+input{
+  /*display: block;*/
+  font-size: 20px;
+  border : 2px solid white;
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 5px; 
+  height: 30px;
+} 
+
+textarea{
+  width: 93%;
+  margin-left: 20px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+#email{
+  width: 36%;
+  margin-left: 70px;
+  margin-right: 19px;
+}
+#name{
+  width: 45%;
+  margin-left: 20px;
+}
+#phone{
+  width: 93%;
+  margin-left: 20px;
+}
+#registration_btn{
+  width: 94%;
+  height: 40px;
+  margin-left: 20px;
+  background-color: #4285F4;
+  color :white;
+  border : none;
+}
+
+
