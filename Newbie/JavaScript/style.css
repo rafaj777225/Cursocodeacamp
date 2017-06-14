@@ -1,0 +1,18 @@
+.jumbotron{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #66757F;
+
+}
+.btn{
+  width: 80%;
+  height: 10%;
+  margin: 10%;
+  padding-top: 2px;
+}
+
+label{
+  color :white;
+  float : left;
+}

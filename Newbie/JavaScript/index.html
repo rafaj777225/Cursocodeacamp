@@ -1,0 +1,35 @@
+<html>
+ <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="style.css">
+   <script language='javascript'>
+   function suma(){
+    var res
+    var n1 = document.getElementById('num1').value;
+    var n2 = document.getElementById('num2').value;
+    res = parseInt(n1) + parseInt(n2);
+    console.log(n1,n2,res)
+    document.getElementById('resul').value = res;
+   }
+   </script>
+ </head>
+ <body>
+  <div class="container">
+    <div class="jumbotron">
+     <center> <span style="font-family: Verdana;"><span style="color: rgb(255, 200, 66);font-size:20;">{ Codea</span><span style="color:#ffffff; font-size:20;">Camp }</span></span></br></br>
+      <form name=formulario method=POST>
+        <label >Numero 1:</label></br>
+        <input type=text id='num1' /></br></br>
+        <label >Numero 2:</label></br>
+        <input type=text id='num2' /></br></br>
+        <input type=button class="btn btn-primary btn-lg" value= "   +   " onclick="suma()"/></br></br>
+        <input type=text id='resul'/></br></br></center>
+      </form>   
+   </div> 
+  </div>  
+ </body>
+</html>
