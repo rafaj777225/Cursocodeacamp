@@ -7,7 +7,7 @@
 # Superclse con metodos generales que todo vehiculo tiene
 class Vehicle
 	# metodos getter, se colocarn asi ya que no es necesario manipular los atributos del objeto
-  	#metodos que serean heredados
+  	#metodos que se crean heredados
   	attr_reader :number_of_wheels, :number_of_gears, :color
   	#constrctor para cachar los atributos directamente dados en la instancia
   	def initialize(age="current")

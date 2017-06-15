@@ -3,7 +3,74 @@ module MiniActiveRecord
   class NotConnectedError < StandardError; end
 
   class Model
+    attr_reader :attributes, :old_attributes
 
+    def self.all
+      MiniActiveRecord::Model.execute("SELECT * FROM #{self}s").map do |row|
+          self.new(row)
+      end
+    end
+
+    def self.create(attributes)
+        record = self.new(attributes)
+        record.save
+
+        record
+      end
+
+    def self.where(query, *args)
+        MiniActiveRecord::Model.execute("SELECT * FROM #{self}s WHERE #{query}", *args).map do |row|
+          self.new(row)
+        end
+      end
+
+    def self.find(pk)
+        self.where('id = ?', pk).first
+      end
+
+    def initialize(attributes = {})
+      attributes.symbolize_keys!
+      raise_error_if_invalid_attribute!(attributes.keys)
+
+      @attributes = {}
+
+        self.attribute_names.each do |name|
+          @attributes[name] = attributes[name]
+        end
+      @old_attributes = @attributes.dup
+    end
+
+    def new_record?
+      self[:id].nil?
+    end
+
+    def self.save
+      if new_record?
+        results = insert!
+      else
+        results = update!
+      end
+      # When we save, remove changes between new and old attributes
+      @old_attributes = @attributes.dup
+
+      results
+    end
+    # getter
+    def self.[](attribute)
+      raise_error_if_invalid_attribute!(attribute)
+
+      @attributes[attribute]
+    end
+
+    # e.g., chef[:first_name] = 'Steve'
+    # setter
+    def self.[]=(attribute, value)
+      raise_error_if_invalid_attribute!(attribute)
+
+      @attributes[attribute] = value
+    end
+
+# -------------------------------------------------------
     def self.inherited(klass)
     end
 
@@ -60,6 +127,7 @@ module MiniActiveRecord
       #   raise_error_if_invalid_attribute!("id")
       # and
       #   raise_error_if_invalid_attribute!(["id", "name"])
+      # valida los datos de entrada del getter y setter
       Array(attributes).each do |attribute|
         unless valid_attribute?(attribute)
           raise InvalidAttributeError, "Invalid attribute for #{self.class}: #{attribute}"
@@ -73,7 +141,41 @@ module MiniActiveRecord
     end
 
 
-    private
+  private
+    def self.insert!
+      self[:created_at] = DateTime.now
+      self[:updated_at] = DateTime.now
+
+      fields = self.attributes.keys
+      values = self.attributes.values
+      marks  = Array.new(fields.length) { '?' }.join(',')
+
+      insert_sql = "INSERT INTO #{self}s (#{fields.join(',')}) VALUES (#{marks})"
+
+      results = MiniActiveRecord::Model.execute(insert_sql, *values)
+
+      # This fetches the new primary key and updates this instance
+      self[:id] = MiniActiveRecord::Model.last_insert_row_id
+      results
+    end
+
+    def self.update!
+        self[:updated_at] = DateTime.now
+
+        fields = self.attributes.keys
+        values = self.attributes.values
+
+        update_clause = fields.map { |field| "#{field} = ?" }.join(',')
+        update_sql = "UPDATE #{self}s SET #{update_clause} WHERE id = ?"
+
+        # We have to use the (potentially) old ID attribute in case the user has re-set it.
+        MiniActiveRecord::Model.execute(update_sql, *values, self.old_attributes[:id])
+    end
+
+
+
+
+    # --------------------------------------------------
 
     def self.prepare_value(value)
       case value
